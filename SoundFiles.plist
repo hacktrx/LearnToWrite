@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MySoundFiles</key>
+	<dict>
+		<key>Asound</key>
+		<string></string>
+		<key>Bsound</key>
+		<string></string>
+		<key>Csound</key>
+		<string></string>
+		<key>Dsound</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

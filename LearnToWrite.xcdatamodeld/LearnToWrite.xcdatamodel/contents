@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="LetterRecording" representedClassName="LetterRecording" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="delayBetweenStrokes" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="largeImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="letterIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="smallImageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="letterStrokes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LetterStroke" inverseName="letterRecording" inverseEntity="LetterStroke" syncable="YES"/>
+    </entity>
+    <entity name="LetterStroke" representedClassName="LetterStroke" syncable="YES">
+        <attribute name="strokeIdentifier" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="letterRecording" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LetterRecording" inverseName="letterStrokes" inverseEntity="LetterRecording" syncable="YES"/>
+        <relationship name="strokePoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StrokePoint" inverseName="letterStroke" inverseEntity="StrokePoint" syncable="YES"/>
+    </entity>
+    <entity name="StrokePoint" representedClassName="StrokePoint" syncable="YES">
+        <attribute name="letter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strokeNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strokePointX" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="strokePointY" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="letterStroke" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="LetterStroke" inverseName="strokePoints" inverseEntity="LetterStroke" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="LetterRecording" positionX="-4761" positionY="-42" width="128" height="150"/>
+        <element name="LetterStroke" positionX="-4563" positionY="-27" width="128" height="90"/>
+        <element name="StrokePoint" positionX="-4367" positionY="-9" width="128" height="120"/>
+    </elements>
+</model>
